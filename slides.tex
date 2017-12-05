@@ -1,0 +1,153 @@
+\documentclass[17pt]{beamer}
+\usetheme{CambridgeUS}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\author{Viačeslav Pozdniakov}
+\title{Introduction to Coq}
+\setbeamercovered{transparent} 
+\setbeamertemplate{navigation symbols}{} 
+\usefonttheme[onlymath]{serif}
+%\logo{} 
+%\institute{} 
+\date{2017-12-07} 
+%\subject{} 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{Constructive Mathematics}
+
+\begin{frame}{Two types of Mathematics}
+
+\begin{itemize}
+  \item Nonconstructive
+  \item Constructive
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Nonconstructive Mathematics}
+
+\emph{Theorem}: There exist positive, irrational numbers $a$ and $b$ such that $a^b$ is rational.
+
+\emph{Proof}:
+
+\begin{enumerate}
+  \item If $\sqrt{2}^{\sqrt{2}}$ is rational, use $a = b = \sqrt{2}$.
+  \item If $\sqrt{2}^{\sqrt{2}}$ is irrational, use $a = \sqrt{2}^{\sqrt{2}}$ and $b = \sqrt{2}$ then $a^b = 2$.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Propositional logic}
+
+\begin{center}
+Disjunction elimination:
+$\frac{P\to Q,R\to Q,P\lor R}{\therefore Q}$
+\end{center}
+\end{frame}
+
+\begin{frame}{William Shakespeare}
+\begin{center}
+\emph{To be, or not to be}
+\end{center}
+\end{frame}
+
+\section{Intuitionistic logic}
+
+\begin{frame}{Modus ponens}
+\begin{center}
+Implication: $P \to Q,\; P\;\; \vdash\;\; Q$
+\end{center}
+\end{frame}
+
+\begin{frame}{Rules}
+\begin{itemize}
+	\item \emph{Bottom (absurdity)} $\bot$
+	\item $\neg \phi$ is an abbreviation for $(\phi \to \bot)$
+	\item $\bot \to \top$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Brouwer–Heyting–Kolmogorov interpretation}
+\begin{itemize}
+	\item A proof of $P\wedge Q$ is a pair $(a,b)$ where $a$ is a proof of $P$ and $b$ is a proof of $Q$.
+	\item A proof of $P\vee Q$ is a pair $(a,b)$ where $a$ is $0$ and $b$ is a proof of $P$, or $a$ is $1$ and $b$ is a proof of $Q$.
+	\item ...
+\end{itemize}
+\end{frame}
+
+\section{Curry–Howard isomorphism}
+
+\begin{frame}{Simplified}
+
+Types correspond to propositions.
+
+Values correspond to proofs.
+
+\end{frame}
+
+\begin{frame}[fragile]{Arbitrary Haskell signature}
+
+\lstset{language=Haskell,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily}
+\begin{lstlisting}
+foo :: A -> B
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}{Not only types and values}
+\begin{table}
+\begin{tabular}{ l | r }
+Logic & Programming \\
+\hline \hline
+implication 	& function type \\
+conjunction 	& product type \\
+disjunction 	& sum type \\
+true formula 	& unit type \\
+false formula 	& bottom type \\
+\end{tabular}
+\end{table}
+\end{frame}
+
+\section{Coq}
+
+\begin{frame}{CoC}
+Calculus of Constructions extends Curry–Howard isomorphism
+\end{frame}
+
+\begin{frame}{Lambda Cube}
+???
+\end{frame}
+
+\begin{frame}{What is Coq?}
+\begin{center}
+Proof Assistant
+\end{center}
+\end{frame}
+
+\section{Coq demo}
+
+\begin{frame}
+	\begin{enumerate}
+		\item Define natural numbers
+		\item Define addition
+		\item Prove associativity of addition
+		\item Prove commutativity of addition 
+	\end{enumerate}
+\end{frame}
+
+\end{document}
