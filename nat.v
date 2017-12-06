@@ -15,6 +15,10 @@ Eval compute in (add Zero Zero).
 Eval compute in (add (Succ(Zero)) Zero).
 Eval compute in (add (Succ(Zero)) (Succ(Zero))).
 
+Extraction Language Haskell.
+Extraction natural.
+Extraction add.
+
 Theorem add_assoc : forall n m o,
                     add (add n m) o = add n (add m o).
 Proof.
