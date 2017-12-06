@@ -100,12 +100,24 @@ Values correspond to proofs.
 
 \begin{frame}[fragile]{Arbitrary Haskell signature}
 
+\emph{Proposition:} $\frac{B\to C; A}{\therefore C}$
+
+\emph{Signature:} 
 \lstset{language=Haskell,
                 basicstyle=\ttfamily,
                 keywordstyle=\color{blue}\ttfamily}
 \begin{lstlisting}
-foo :: A -> B
+foo :: A -> B -> C
 \end{lstlisting}
+
+\emph{Proof:}
+\lstset{language=Haskell,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily}
+\begin{lstlisting}
+foo a b = ...
+\end{lstlisting}
+
 
 \end{frame}
 
@@ -129,19 +141,29 @@ false formula 	& bottom type \\
 Calculus of Constructions extends Curry–Howard isomorphism
 \end{frame}
 
-\begin{frame}{Lambda Cube}
-???
+\begin{frame}{What is Coq?}
+	\begin{center}
+		\begin{itemize}
+			\item Proof Assistant, not a prover
+			\item Proof reuse
+			\item Code extraction
+		\end{itemize}
+	\end{center}
 \end{frame}
 
-\begin{frame}{What is Coq?}
-\begin{center}
-Proof Assistant
-\end{center}
+\begin{frame}{Languages}
+	\begin{center}
+		\begin{itemize}
+			\item Gallina - always terminates
+			\item Ltac - sequence of tactics which produce Gallina terms 
+		\end{itemize}
+	\end{center}
 \end{frame}
+
 
 \section{Coq demo}
 
-\begin{frame}
+\begin{frame}{What we will do}
 	\begin{enumerate}
 		\item Define natural numbers
 		\item Define addition
