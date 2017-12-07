@@ -100,14 +100,14 @@ Values correspond to proofs.
 
 \begin{frame}[fragile]{Arbitrary Haskell signature}
 
-\emph{Proposition:} $\frac{B\to C; A}{\therefore C}$
+\emph{Proposition:} $\frac{A \to B}{B}$
 
 \emph{Signature:} 
 \lstset{language=Haskell,
                 basicstyle=\ttfamily,
                 keywordstyle=\color{blue}\ttfamily}
 \begin{lstlisting}
-foo :: A -> B -> C
+foo :: A -> B
 \end{lstlisting}
 
 \emph{Proof:}
@@ -115,7 +115,7 @@ foo :: A -> B -> C
                 basicstyle=\ttfamily,
                 keywordstyle=\color{blue}\ttfamily}
 \begin{lstlisting}
-foo a b = ...
+foo a = ...
 \end{lstlisting}
 
 
